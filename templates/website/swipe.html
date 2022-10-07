@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+{% block con %} 
+{% load static %}
+<h1 class="text-center"style="font-size: 150%; font-weight: bold; background-color:skyblue">🏖️My Music Gelary🏖️</h1>
+<section>
+    <div class="wrap">
+        <h1>UI/UX <span>PORTFOLIO</span></h1>
+
+        <ul class="auto">
+            <li class="btnStart"><i class="fas fa-play"></i></li>
+            <li class="btnStop"><i class="fas fa-pause"></i></li>
+        </ul>
+
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="inner">
+                <div class="con">
+                    <iframe width="440px" height="369.22px" src="https://www.youtube.com/embed/iAfxyHOmHrM" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                    <h3>경서-나의 x에게</h3>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="inner">
+                <div class="con">
+                    <iframe width="440px" height="369.22px" src="https://www.youtube.com/embed/OngzGgJDip4" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                    <h3>멜로망스-사랑인가 봐</h3>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="inner">
+                <div class="con">
+                    <iframe width="440px" height="369.22px" src="https://www.youtube.com/embed/oF4X5OkAiq8" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                    <h3>탑현-호랑수월가</h3>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="inner">
+                <div class="con">
+                    <iframe width="440px" height="369.22px" src="https://www.youtube.com/embed/_bXarqHwbkY" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                    <h3>스탠딩 에그 - 오래된 노래</h3>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="inner">
+                <div class="con">
+                    <iframe width="440px" height="369.22px" src="https://www.youtube.com/embed/82QbjPoHmyg" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                    <h3>10CM - 사랑은 은하수 다방에서</h3>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="inner">
+                <div class="con">
+                    <iframe width="440px" height="369.22px" src="https://www.youtube.com/embed/WelKAFjKnDE" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+                    <h3>볼빨간 사춘기 - Love story</h3>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            <div class="inner">
+                <div class="con">
+                    <iframe width="440px" height="369.22px" src="https://www.youtube.com/embed/j4v7OiwNIdk" title="YouTube video player" 
+                    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                     allowfullscreen></iframe>
+                    <h3>로이킴 - 살아가는 거야</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <!-- 좌우버튼 -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            
+            <!-- 페이징 버튼 -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    <script>
+        const swiper = new Swiper('.wrap',{	
+            direction: "horizontal",
+            loop: true,						
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction'
+            },	
+            navigation : {				
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',			
+            },
+            spaceBetween: 0,
+            slidesPerView: "auto",
+            grabCursor: true,
+            centeredSlides :true,
+            speed:1000,
+            effect:"coverflow",	
+            coverflowEffect: {
+                rotate: 50,
+                stretch: -100,
+                depth: 400,
+                modifier: 1,
+                slideShadows: false,
+            },
+            autoplay: {
+                delay:1000,		
+                disableOnInteraction : true
+            }	
+        });
+
+        // .btnStart 요소를 찾아서 btnStart에 저장
+        const btnStart = document.querySelector(".btnStart");
+        // .btnStop 요소를 찾아서 btnStop에 저장
+        const btnStop = document.querySelector(".btnStop");
+
+        //btnStart버튼을 클릭시 자동롤링 시작
+        btnStart.addEventListener("click",()=>{
+            swiper.autoplay.start();
+        });
+
+        //btnStart버튼을 클릭시 자동롤링 정지
+        btnStop.addEventListener("click",()=>{
+            swiper.autoplay.stop();
+        });
+    </script>	
+</section>
+{% endblock %}
